@@ -19,14 +19,15 @@
         <!-- PESQUISA -->
         <div class="container">
           <div class="search-container">
-            <input type="text" v-model="buscaPokemon" @input="searchPokemon"/>
+            <input type="text" v-model="buscaPokemon" id="searchField" @input="searchPokemon"/>
+            <div id="optionsContainer"></div>
             <p v-if="error">{{ error }}</p>
             <p v-if="loading">Buscando na Pokedex...</p>
           </div>
         </div>
 
 
-        <!-- NAVEGAA -->
+        <!-- NAVEGAÇÃO -->
         <div v-if="pokemon">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item"><a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Imagens</a></li>
@@ -35,7 +36,7 @@
             </ul>
 
 
-            <!-- CONTEUDO -->
+            <!-- CONTEÚDO -->
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
               <img :src="pokemon.sprites.front_default" alt="Pokémon Frente">
@@ -46,12 +47,15 @@
 
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
               <p>Nome: {{ pokemon.name }}</p>
+              <p>ID: {{ pokemon.id }}</p>
               <p>Altura: {{ pokemon.height }}</p>
+              <p>Altura: {{ pokemon.ability }}</p>
               <p>Peso: {{ pokemon.weight }}</p>
               <p>Tipo: {{ pokemon.types.map(t => t.type.name).join(", ") }}</p>
               <p>Movimentos: {{ pokemon.moves.map(t => t.move.name).join("|") }}</p>
               <p>Itens: {{ pokemon.game_indices.map(t => t.game_index).join(",") }}</p>
-              <p>Estatísticas: {{ pokemon.stats.map(t => t.game_index).join(",")  }}</p>
+              <p>Estatísticas: {{ pokemon.stats.map(t => t.stat.name).join(",")  }}</p>
+
             </div>
 
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
@@ -62,6 +66,8 @@
       </div>
     </div>
   </body>
+
     <!-- SCRIPTS -->
   <script src="index.js"></script>
+  
 </html>
