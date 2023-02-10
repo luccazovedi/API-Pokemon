@@ -50,7 +50,9 @@ new Vue({
     }
   }
 });
-/*
+
+
+/* 
 const searchField = document.getElementById("searchField");
 const optionsContainer = document.getElementById("optionsContainer");
 const pokemons = ["bulbasauro", "Ivysaur", "Venusaur", "charmander", "Charmeleon", "Charizard","Squirtle", "Wartortle", "Blastoise", "Pikachu", "Raichu", "Jigglypuff", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", 

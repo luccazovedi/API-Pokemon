@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 25vh;
 }
 
 .search-container {
@@ -23,4 +23,16 @@ img {
   width: 150px;
   height: 150px;
   margin-bottom: 10px;
+}
+
+body{
+  background-image: url("https://i.pinimg.com/originals/93/98/94/9398944b931f51d4ab0a8e92f44ca452.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+
+#myTabContent{
+  background-color: rgba(255, 255, 255, 0.411);
 }
