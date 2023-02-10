@@ -17,16 +17,40 @@ new Vue({
           `https://pokeapi.co/api/v2/pokemon/${this.buscaPokemon}`       
         );
         const data = await response.json();
-        this.pokemon = data;
+        this.pokemon = data;    
+        this.nome = data.name;
+        this.id = data.id;
+        this.altura = data.height;
+        this.peso = data.weight;
+        this.tipos = data.types.map(tipo => tipo.type.name);
+        this.habilidades = data.abilities.map(habilidade => habilidade.ability.name);
+        this.movimentos = data.moves.map(movimento => movimento.move.name);
+        this.held_items = data.held_items.map(item => item.item.name);
+        this.species = data.species.name;
+        this.sprites = data.sprites;
+        this.forms = data.forms.map(forms => forms.name);
+       
+        this.estatisticas = data.stats.map(stat => {
+          return {
+            nome: stat.stat.name,
+            valor: stat.base_stat
+          };
+        });
+        this.gameIndices = data.game_indices.map(gameIndex => {
+          return {
+            game_index: gameIndex.game_index,
+            version: gameIndex.version
+          };
+        });
         this.error = null;
       } catch (error) {
         this.error = "Nada na Pokedex! Tente outro. ";
       }
       this.loading = false;
-    },
-  },
+    }
+  }
 });
-
+/*
 const searchField = document.getElementById("searchField");
 const optionsContainer = document.getElementById("optionsContainer");
 const pokemons = ["bulbasauro", "Ivysaur", "Venusaur", "charmander", "Charmeleon", "Charizard","Squirtle", "Wartortle", "Blastoise", "Pikachu", "Raichu", "Jigglypuff", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", 
@@ -47,4 +71,4 @@ searchField.addEventListener("input", function() {
     });
     optionsContainer.appendChild(option);
   });
-});
+});*/

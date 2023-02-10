@@ -12,10 +12,11 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link href="/pesquisa.html">
     </head>
     <body>
-      <div id="app">
 
+      <div id="app">
         <!-- PESQUISA -->
         <div class="container">
           <div class="search-container">
@@ -46,18 +47,56 @@
             </div>
 
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              <p>Nome: {{ pokemon.name }}</p>
-              <p>ID: {{ pokemon.id }}</p>
-              <p>Altura: {{ pokemon.height }}</p>
-              <p>Altura: {{ pokemon.ability }}</p>
-              <p>Peso: {{ pokemon.weight }}</p>
-              <p>Tipo: {{ pokemon.types.map(t => t.type.name).join(", ") }}</p>
-              <p>Movimentos: {{ pokemon.moves.map(t => t.move.name).join("|") }}</p>
-              <p>Itens: {{ pokemon.game_indices.map(t => t.game_index).join(",") }}</p>
-              <p>Estatísticas: {{ pokemon.stats.map(t => t.stat.name).join(",")  }}</p>
-
+                <p>Nome: {{ nome }}</p>
+                <p>ID: {{ id }}</p>
+                <p>Altura: {{ altura }}</p>
+                <p>Peso: {{ peso }}</p>
+                <p>Tipos:</p>
+                <ul>
+                  <li v-for="tipo in tipos">{{ tipo }}</li>
+                </ul>
+                <p>Habilidades:</p>
+                <ul>
+                  <li v-for="habilidade in habilidades">{{ habilidade }}</li>
+                </ul>
+                <p>Estatísticas:</p>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Tipo</th>
+                      <th>Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="estatistica in estatisticas">
+                      <td>{{ estatistica.nome }}</td>
+                      <td>{{ estatistica.valor }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Movimentos:</p>
+                <ul>
+                  <li v-for="movimento in movimentos">{{ movimento }}</li>
+                </ul>
+                <p>Itens segurados:</p>
+                <ul>
+                  <li v-for="item in held_items">{{ item }}</li>
+                </ul>
+                <p>Espécie: {{ species }}</p>
+                <p>Sprites:</p>
+                <img :src="sprites.front_default" />
+                <img :src="sprites.back_default" />
+                <p>Formas:</p>
+                <ul>
+                  <li v-for="forma in forms">{{ forma }}</li>
+                </ul>
+                <h2>Game Indices</h2>
+                <ul>
+                  <li v-for="gameIndex in gameIndices">{{ gameIndex.game_index }} - {{ gameIndex.version.name }}</li>
+                </ul>
+              </div>
             </div>
-
+            </div>
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
             </div>
           </div>
@@ -69,5 +108,5 @@
 
     <!-- SCRIPTS -->
   <script src="index.js"></script>
-  
+
 </html>
