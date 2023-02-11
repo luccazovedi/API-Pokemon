@@ -30,7 +30,7 @@
          </div>
          <!-- PRIMEIRA IMAGEM -->
          <center>
-            <div v-if="pokemon"><img :src="pokemon.sprites.other.dream_world.front_default" alt="Pokémon Desenho"></div>
+            <div v-if="pokemon"><img :src="pokemon.sprites.other.dream_world.front_default" alt="Pokémon Desenho"><p style="font-style: italic"><strong>{{ nome }}</strong></p></div>
          </center>
          <div v-if="pokemon">
             <!-- NAVEGAÇÃO -->
