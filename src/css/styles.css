@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 25vh;
+	margin-top: 10vh;
 }
 
 .search-container {
