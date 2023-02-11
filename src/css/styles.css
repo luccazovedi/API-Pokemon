@@ -18,7 +18,7 @@ input[type="text"] {
 	border-radius: 50px;
 	border: 1px solid gray;
 	margin-bottom: 1px;
-	width: 30vh;
+	width: 35vh;
 }
 
 ::-webkit-input-placeholder {
