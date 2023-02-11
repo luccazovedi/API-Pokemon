@@ -1,38 +1,60 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 25vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 25vh;
 }
 
 .search-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
 }
 
 input[type="text"] {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid gray;
-  margin-bottom: 10px;
+	padding: 10px;
+	font-size: 16px;
+	border-radius: 50px;
+	border: 1px solid gray;
+	margin-bottom: 1px;
+	width: 60vh;
+}
+
+::-webkit-input-placeholder {
+	font-weight: 800;
+	font-style: italic;
 }
 
 img {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 10px;
+	width: 150px;
+	height: 150px;
+	margin-bottom: 10px;
 }
 
-body{
-  background-image: url("https://i.pinimg.com/originals/93/98/94/9398944b931f51d4ab0a8e92f44ca452.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  
+body {
+	background-image: url("https://i.pinimg.com/originals/93/98/94/9398944b931f51d4ab0a8e92f44ca452.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+
 }
 
-#myTabContent{
-  background-color: rgba(255, 255, 255, 0.411);
+#myTabContent {
+	background-color: rgba(255, 255, 255, 0.411);
+	margin:5px;
+}
+
+.nav-item,
+.nav-link {
+	background-color: rgba(255, 255, 255, 0.048);
+	color: black;
+	text-transform: capitalize;
+}
+
+p,
+li,
+td,
+th {
+	text-transform: uppercase;
 }
