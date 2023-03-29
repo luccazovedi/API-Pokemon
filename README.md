@@ -11,14 +11,4 @@ PokeAPI.
 Lucca Zovedi
 
 ## Tecnologias utilizadas: 
-- HTML5
-- CSS3
-- JS
-- Vue
-- Bootstrap
-
-## API: 
-[PokeAPI](https://pokeapi.co/)
-
-## Plataforma Utilizada
-[StackBlitz ⚡️](https://stackblitz.com/)
+- React 
